@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Wee Marquee!</title>   
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="Main Stylesheet" charset="utf-8">
+		
+		<style type="text/css" media="screen">  
+			* { margin: 0; padding: 0;} 
+			
+			.wp-scroller { 
+				width: 100%;
+				background: #121244
+			}  
+			.parent-scroller {
+				width: 600px;
+				overflow:hidden;
+				position: relative;
+				background: #467ba4;
+				height: 2em;
+				color: #fff;                  
+				text-shadow: 0 1px 1px #121244;  
+				margin: 1em auto;   
+			}  
+			 
+			.parent-scroller > b,
+			.parent-scroller > i {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 40px;
+				height: 100%;
+				z-index: 2;  
+				background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAFCAYAAAA3zK6FAAABYklEQVQoFYVSS3LCMAyVFHcybFgww44Fl8gNev8zcAJWJBAltvqeAkw3tBqMZH2fn6KHw3fIR9EmEjeEF5ybqiwROoo0FzH6YEfGIsJVFXEZmSeiWYe7m8VIrRoT6r21gK8bzRryY+y64o/HjLstpXwhbuN+f/dhOC7lI7YMoO0m1NoAF+AEQJR6E80cM/oUMUCOBt/vUhPGawU8xLvONKLKuipsEXeXvu+llE6WpaLtVS6XHY7InwDRjIxhYORgDHnbEYZGiAAHh4KVHI47ND34QQxpiMFqsAnsBRzN0AAgo++LgEEALuG+4n6Q8/kuw/APQA4gExiXzThI1Z6wCIxAtoFkiLMBCJqsbgyzBsBQo9FwYUmtLbDiKKURsLpbMriuVXa7PjdF9nhIw0d5P3bL2Ch5ZpM7rDJvzMPsRIrPIPUGnmHsEMIHpIE/rrVWrvjlcZnnGY9oOk1TOk+nY+b/AOpq3bw9Soi8AAAAAElFTkSuQmCC) repeat-y;
+			}  
+			
+			.parent-scroller > i {
+				right: 0;
+				left: auto;  
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAFCAYAAAA3zK6FAAABTUlEQVQoFX1Ry27DQAiEfTiRbfXWW37LX5kPyW/kkFvvUVRloTOsnbZRWiQbWAYYQJdlyafTZbjdUhGZ59ZaVfXZrNSc70NrOqWUqlmD1kFVB3cfVWUQJLgr8RPeKmzEZWLMrGsRryJp6lpm5KOWIUdnEUVMoD1Bv5R0PIpcLjs3e1Mi9ntDrrrI55pAu0nOKeIoDi6gADFjzKDpJcEAwgghKIGY4OsYvDMHfRyYnh9hCRwLvBQwP/rh8B4Nr9erYJMg4PC5IJFSaFNQeZWcN6sFSRKjsDnbwQe9IIFAJ4N35q+1Ah6//+lxbFm0lI9oPo4jGvze4P3ODSRtrRfFuZUbokc7JQ5AdxvkeYNBuScDtA4T+Xh87HIDPOu4/fn8/azaN1hrWadlY/XtxERywzh1bI8+TDRUNKfXN/jjjFFnPXEH4M8zUT0e/jC+AEMwo6ZVqtU7AAAAAElFTkSuQmCC);
+			} 
+			
+			.scroller span { display: inline; white-space: nowrap;}
+			.scroller {
+				position: absolute;
+				top: 0.25em;   
+				left: 0;   
+			}
+		</style>
+	</head>
+	<body> 
+		<div id="container"><!--START ID container-->
+			<h1>Demo for Wee Marquee</h1>
+			<p>This is how you create marquee the standards way!</p>  
+			<div class="wp-scroller">
+				<div class="parent-scroller"><!--START CLASS parent-scroller-->  
+					<b></b>
+					<i></i>
+					<p class="scroller">
+						<span>This is a poor single marquee. </span> 		      
+					</p>		
+				</div><!--END CLASS parent-scroller-->				
+			</div>
+  		<div class="wp-scroller">
+				<div class="parent-scroller"><!--START CLASS parent-scroller-->
+					<b></b>
+					<i></i>
+					<p class="scroller"><!--START CLASS scroller-->
+							<span>This is a scrolling text which exceeds the width of the container. This means it will be duplicating itself. Wheee!</span>
+					</p><!--END CLASS scroller-->
+				</div><!--END CLASS parent-scroller-->  			
+  		</div>
+			
+		</div><!--END ID container-->
+		<script src="http://code.jquery.com/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script> 
+		<script src="jquery.weemarquee.js" type="text/javascript" charset="utf-8"></script>   
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function(){
+			    $(".scroller").weemarquee();                                
+			});
+
+		</script>
+	</body>
+</html>
