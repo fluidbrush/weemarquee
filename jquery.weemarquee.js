@@ -5,16 +5,16 @@
             interval: 20, 
             fade: true, 
             width: 400, 
-            skin: 'wm-fade'
+            skin: 'wm-base'
         };
         
         if (settings) $.extend(config, settings);
                                                 
         if(config.fade) {                       
-          $(this).wrap("<div class='" + config.skin + "'><div class='wm-mom'/></div>");  
+          $(this).wrap("<div class='wm-fade " + config.skin + "'><div class='wm-mom'/></div>");  
           $(this).parent().prepend("<b/><i/>");
         } else {
-          $(this).wrap("<div class='wm-mom'/>");
+          $(this).wrap("<div class='wm-mom "+ config.skin + "'/>");
         }
         
         $(this).removeClass("wm-mom").addClass("marquee").parent().css({width : config.width});
@@ -22,18 +22,13 @@
         this.each(function() {              
             var ticker = $(this);    
             var containerwidth = ticker.parent().outerWidth();                                
-            console.log(containerwidth);
             var totalwidth = 0, leftvalue = 0, recursivemarquee;
             ticker.children().each(function() { 
-                if(!$(this).hasClass("wm-el")) {
-                  $(this).addClass("wm-el")
-                }
-                
+                $(this).addClass("wm-el")                
                 totalwidth += $(this).outerWidth(true);   
                
             });                                             
-
-            console.log(totalwidth);            
+                                               
              
             if(totalwidth > containerwidth) {
               ticker.children().each(function() {
