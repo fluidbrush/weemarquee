@@ -2,18 +2,30 @@
     
     $.fn.weemarquee = function(settings) {
         var config = {        
-            interval: 20
+            interval: 20, 
+            fade: true, 
+            width: 600, 
+            skin: 'wm-fade'
         };
         
         if (settings) $.extend(config, settings);
                                                 
+        if(config.fade) {                       
+          $(this).wrap("<div class='" + config.skin + "'><div class='wm-mom'/></div>");  
+          $(this).parent().prepend("<b/><i/>");
+        } else {
+          $(this).wrap("<div class='wm-mom'/>");
+        }
+        
+        $(this).removeClass("wm-mom").addClass("marquee").parent().css({width : config.width});
         
         this.each(function() {              
             var ticker = $(this);    
             var containerwidth = ticker.parent().outerWidth();                                
             
             var totalwidth = 0, leftvalue = 0, recursivemarquee;
-            ticker.children().each(function() {       
+            ticker.children().each(function() { 
+                $(this).toggleClass("wm-el");
                 totalwidth += $(this).outerWidth(true);   
                
             });                                             
