@@ -4,7 +4,7 @@
         var config = {        
             interval: 20, 
             fade: true, 
-            width: 600, 
+            width: 400, 
             skin: 'wm-fade'
         };
         
@@ -22,14 +22,18 @@
         this.each(function() {              
             var ticker = $(this);    
             var containerwidth = ticker.parent().outerWidth();                                
-            
+            console.log(containerwidth);
             var totalwidth = 0, leftvalue = 0, recursivemarquee;
             ticker.children().each(function() { 
-                $(this).toggleClass("wm-el");
+                if(!$(this).hasClass("wm-el")) {
+                  $(this).addClass("wm-el")
+                }
+                
                 totalwidth += $(this).outerWidth(true);   
                
             });                                             
-            
+
+            console.log(totalwidth);            
              
             if(totalwidth > containerwidth) {
               ticker.children().each(function() {
