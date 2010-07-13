@@ -46,13 +46,13 @@
 			<b id="raptor"><a href="http://en.wikipedia.org/wiki/Dromaeosauridae" title="looking for me? click!">guess who?!</a></b>
 			<h1>Demo for Wee Marquee</h1>
 			<p>Wee! Yet another marquee jQuery plugin! So, this creates a marquee like Twitter's homepage, but also accounts for the case when the length of the content is less than the width of the marquee viewport (check the first example below). </p>  
-				<p class="scroller wm-mom">
+				<p class="scroller">
 					<span>This is a poor single marquee.</span> 		      
 				</p>		
 				<p class="scroller wm-mom"><!--START CLASS scroller-->
-						<span class="wm-el">This is a selection of scrolling text which exceeds the width of this container. This means it will be duplicating itself twice.  Weee! &lt;end&gt;</span>
+						<span class="wm-el">This is a selection of scrolling text which exceeds the width of this container. This means it will be duplicating itself.  Weee! &lt;end&gt;</span>
 				</p><!--END CLASS scroller-->			
-				<p class="scroller-nofade wm-mom"><!--START CLASS scroller-->
+				<p class="scroller-nofade"><!--START CLASS scroller-->
 						<span class="wm-el">This has no fade effect for minimalists.</span>
 				</p><!--END CLASS scroller-->		 
 				<h2>Why?</h2>
@@ -82,9 +82,9 @@
 		  <p>Thank you Opensorcerers, fork it on <a href="http://github.com/nimbupani/weemarquee/">github</a> and improve it as you wish!</p>
 		</div><!--END ID container-->
 		<script src="http://code.jquery.com/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script> 
-		<script src="jquery.weemarquee.min.js" type="text/javascript" charset="utf-8"></script>   
+		<script src="jquery.weemarquee.js" type="text/javascript" charset="utf-8"></script>   
 		<script type="text/javascript" charset="utf-8">
-			$(document).ready(function(){
+			$(function(){
 			    $(".scroller").weemarquee();
 					$(".scroller-nofade").weemarquee({ fade: false, width: "100%" });
 			});

@@ -4,7 +4,7 @@
         var config = {        
             interval: 20, 
             fade: true, 
-            width: 400, 
+            width: 600, 
             skin: 'wm-base' 
         };
         
@@ -46,7 +46,7 @@
                   $(this).clone().appendTo(ticker);
               });   
               
-              ticker.width(2*totalwidth);  
+              ticker.width(3*totalwidth);  
               
               recursivemarquee = function() {
                   leftvalue = parseInt(ticker.css('left'))? parseInt($(ticker).css('left')) : 0;
